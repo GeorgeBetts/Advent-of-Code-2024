@@ -12,7 +12,6 @@ foreach ($values as $value) {
     $rightList[] = intval($split[1]);
 }
 
-echo 'Prepared lists'.PHP_EOL;
 print_r($leftList);
 
 // Sort the lists, so we can process them quicker (saves having to do a min() every iteration, and prevents
@@ -20,7 +19,6 @@ print_r($leftList);
 rsort($leftList);
 rsort($rightList);
 
-echo 'Sorted lists'.PHP_EOL;
 
 $items = count($values);
 $difference = 0;
