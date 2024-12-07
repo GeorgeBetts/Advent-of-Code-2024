@@ -9,3 +9,5 @@ Day 2: :star::star:
 Day 3: :star::star:  
 Day 4: :star::star:  
 Day 5: :star::star:  
+Day 6: TBC  
+Day 7: :star::star:
