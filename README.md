@@ -12,4 +12,5 @@ Day 5: :star::star:
 Day 6: TBC  
 Day 7: :star::star:  
 Day 8: :star::star:  
-Day 9: :star::star:
+Day 9: :star::star:  
+Day 10: :star::star:
