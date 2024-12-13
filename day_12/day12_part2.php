@@ -6,7 +6,6 @@ $timer = new PuzzleTimer();
 $farm = new Farm(__DIR__.'/input.txt');
 $totalCost = 0;
 foreach ($farm->regions as $region) {
-    echo 'Sides: '.$region->sides.PHP_EOL;
     $totalCost += $region->getCost();
 }
 echo $totalCost.PHP_EOL;
@@ -181,11 +180,16 @@ class Region
             $this->perimeter++;
         }
 
-        // Count any points on the plot
+        // Count any points on the plot (outside points)
         if (!$northPerimeter && !$eastPerimeter) $this->sides++;
         if (!$northPerimeter && !$westPerimeter) $this->sides++;
         if (!$southPerimeter && !$eastPerimeter) $this->sides++;
         if (!$southPerimeter && !$westPerimeter) $this->sides++;
+
+        if ($plot->east->value === $plot->value && $plot->south->value === $plot->value && $plot->east->south?->value !== $plot->value) $this->sides++;
+        if ($plot->west->value === $plot->value && $plot->south->value === $plot->value && $plot->west->south?->value !== $plot->value) $this->sides++;
+        if ($plot->north->value === $plot->value && $plot->east->value === $plot->value && $plot->north->east?->value !== $plot->value) $this->sides++;
+        if ($plot->north->value === $plot->value && $plot->west->value === $plot->value && $plot->north->west?->value !== $plot->value) $this->sides++;
     }
 
 }
